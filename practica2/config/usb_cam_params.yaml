@@ -1,0 +1,18 @@
+# Parámetros del nodo usb_cam_node_exe (paquete usb_cam, versión 0.8 en ROS 2 Jazzy).
+# El launch camera.launch.py carga este fichero y sobrescribe video_device con su argumento.
+/**:
+  ros__parameters:
+    video_device: '/dev/video0'
+    # La cámara entrega YUYV y el driver lo convierte a rgb8, que cv_bridge y
+    # rqt_image_view entienden sin conversiones raras.
+    pixel_format: 'yuyv2rgb'
+    io_method: 'mmap'
+    image_width: 640
+    image_height: 480
+    framerate: 30.0
+    camera_name: 'usb_cam'
+    frame_id: 'usb_cam'
+    # Vacío hasta que haya calibración (parte 2). Entonces se pondrá
+    # 'package://practica2/config/camera_calibration.yaml' para que usb_cam la
+    # publique en /usb_cam/camera_info.
+    camera_info_url: ''
