@@ -29,6 +29,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'image_ingestor = practica2.image_ingestor:main',
         ],
     },
 )
